@@ -1,0 +1,6 @@
+:body.index {
+  --sidebar-bg:body.index {
+    --body-content-color: linear-gradient(113deg, #a1b3ff 0%, #c3a1ff 100%);
+    --body-border-color: #2000af;
+  }
+}
