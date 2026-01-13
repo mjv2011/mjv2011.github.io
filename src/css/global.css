@@ -111,3 +111,8 @@ body {
     background-position: 1000vw 1000vh;
   }
 }
+
+.hvr :hover {
+  transform: scale(1.1);
+  transition: all 0.2s;
+}
