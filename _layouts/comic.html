@@ -1,0 +1,20 @@
+<main class="page">
+        <span class="comicHeader"
+          ><a href="/blog"><button class="generic-btn">← Go Back</button></a>
+          <p><b>{{ page.series}} • Chapter {{page.chapter}}</b></p>
+          
+          {% assign current_series = page.series %}
+        {% assign series_comics = site.comics | where: "series", current_series | sort: "chapter" %}
+
+        <select onchange="location=this.value" class="dropdown">
+        {% for comic in series_comics %}
+            <option value="{{ comic.url }}" {% if comic.url == page.url %}selected{% endif %}>
+            Chapter {{ comic.chapter }}
+            </option>
+        {% endfor %}
+        </select>
+          </span>
+        <hr />
+        <br />
+        {{ content }}
+      </main>

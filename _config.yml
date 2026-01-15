@@ -1,0 +1,7 @@
+collections:
+  comics:
+    output: true
+    permalink: /comics/:path/
+
+plugins:
+  - jekyll-sitemap
