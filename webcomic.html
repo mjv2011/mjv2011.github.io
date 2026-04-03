@@ -25,6 +25,8 @@ colors: comic
         </button>
       </a>
     </span>
+
+    <!-- comic 2 -->
     <span class="card">
       <img>
       <h3>the less cool one</h3>
@@ -32,6 +34,11 @@ colors: comic
       <br>
       {% assign latest = site.comics | where: "series", "coolone" | sort: "chapter"
       | last %}
+      <a href="/comics/thecoolone/01/">
+        <button class="comicBtn">
+          Read First Chapter
+        </button>
+      </a>
       <a href="{{ latest.url }}">
         <button class="comicBtn">
           Read Latest Chapter <small> — Chapter {{latest.chapter}}</small>

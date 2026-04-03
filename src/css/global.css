@@ -25,7 +25,20 @@ h1 {
   font-family: "Comic Neue";
   font-size: 50px;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 800;
+}
+
+h3 {
+  color: #000;
+
+  -webkit-text-stroke-width: 8px;
+  -webkit-text-stroke-color: #f9f8ff;
+  paint-order: stroke fill;
+
+  font-family: "Comic Neue";
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 800;
 }
 
 a {
@@ -35,12 +48,7 @@ a {
 }
 
 small {
-  -webkit-text-stroke-width: 0px;
-  font-size: 15px !important;
-  font-style: italic;
-  margin: 0;
-  padding: 0;
-  line-height: normal !important;
+  font-size: 11px !important;
 }
 
 br {
@@ -91,12 +99,13 @@ max-width: 50%;
 display: flex;
 flex-direction: column;
 
+gap: 5px;
 padding: 3px 6px;
 align-items: center;
 justify-content: center;
 
 border-radius: 15px;
-background: linear-gradient(113deg, #ce7878 0%, #da836d 100%);
+background: linear-gradient(113deg, #ee8a8a 0%, #eb6a6a 100%);
 border: 7px solid #610d0d;
 
 
@@ -179,7 +188,23 @@ border: 7px solid #610d0d;
   }
 }
 
-@media (max-width: 670px) {
+/* buttons */
+
+.comicBtn {
+
+  border: none;
+  border-radius: 100px;
+  padding: 6px;
+  background: #4600006e;
+  color: white;
+  font-family: "Comic Neue";
+
+  -webkit-text-stroke-width: 4px;
+  -webkit-text-stroke-color: #0e0e0e;
+  paint-order: stroke fill;
+}
+
+@media (max-width: 1000px) {
   .cardContainer {
     flex-direction: column;
   }
