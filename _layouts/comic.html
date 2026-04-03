@@ -8,16 +8,7 @@
 
     <select onchange="location = this.value" class="dropdown">
       {% for comic in series_comics %}
-      <option
-        value="{{ comic.url }}"
-        {%
-        if
-        comic.url=""
-        ="page.url"
-        %}selected{%
-        endif
-        %}
-      >
+   <option value="{{ comic.url }}" {% if comic.url==page.url %}selected{% endif %}>
         Chapter {{ comic.chapter }}
       </option>
       {% endfor %}
