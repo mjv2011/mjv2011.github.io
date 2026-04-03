@@ -20,7 +20,7 @@ body.chars {
 }
 
 body.guest {
-  --body-div-color: linear-gradient(113deg, #a1b7ff 0%, #a1ffff 100%);
+  --body-div-color: linear-gradient(113deg, #a1b7ff 0%, #a1e1ff 100%);
   --body-border-color: #0052af;
   --bg-image: url(/src/img/bg/guestbook-bg.png);
 }
