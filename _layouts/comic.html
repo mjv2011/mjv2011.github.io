@@ -1,20 +1,33 @@
-<main class="page">
-  <span class="comicHeader"
-    ><a href="/webcomic"><button class="generic-btn">← Go Back</button></a>
-    <p><b>{{ page.series}} • Chapter {{page.chapter}}</b></p>
+<!DOCTYPE html>
+<html>
 
-    {% assign current_series = page.series %} {% assign series_comics =
-    site.comics | where: "series", current_series | sort: "chapter" %}
+<head>
+  <link href="/src/css/colors.css" rel="stylesheet" />
+  <link href="/src/css/global.css" rel="stylesheet" />
+</head>
 
-    <select onchange="location = this.value" class="dropdown">
-      {% for comic in series_comics %}
-   <option value="{{ comic.url }}" {% if comic.url==page.url %}selected{% endif %}>
-        Chapter {{ comic.chapter }}
-      </option>
-      {% endfor %}
-    </select>
-  </span>
-  <hr />
-  <br />
-  {{ content }}
-</main>
+<body class="comic">
+  <div class="container">
+    {% include sidebar.html %}
+    <div class="content">
+      <a href="/webcomic">
+        <button class="generic-btn">
+          ← Go Back
+        </button>
+      </a>
+      {% assign current_series = page.series %}
+      {% assign series_comics = site.comics | where: "series", current_series | sort: "chapter" %}
+
+      <select onchange="location=this.value" class="dropdown">
+        {% for comic in series_comics %}
+        <option value="{{ comic.url }}" {% if comic.url==page.url %}selected{% endif %}>
+          Chapter {{ comic.chapter }}
+        </option>
+        {% endfor %}
+      </select>
+      {{ content }}
+    </div>
+  </div>
+</body>
+
+</html>

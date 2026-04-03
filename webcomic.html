@@ -5,11 +5,38 @@ colors: comic
 ---
 
 <div class="content">
-  {% assign latest = site.comics | where: "series", "Geopolis" | sort: "chapter"
-  | last %}
-  <a href="{{ latest.url }}">
-    <button class="comicBtn">
-      Read Latest Chapter <small> — Chapter {{latest.chapter}}</small>
-    </button>
-  </a>
+  <div style="display: flex; flex-direction: row; gap: 25px;">
+    <!-- put your little card for series in here -->
+    <span class="card">
+      <img>
+      <h3>the cool one</h3>
+      <p>description</p>
+      <br>
+      {% assign latest = site.comics | where: "series", "Geopolis" | sort: "chapter"
+      | last %}
+      <a href="/comics/geopolis/01/">
+        <button class="comicBtn">
+          Read First Chapter
+        </button>
+      </a>
+      <a href="{{ latest.url }}">
+        <button class="comicBtn">
+          Read Latest Chapter <small> — Chapter {{latest.chapter}}</small>
+        </button>
+      </a>
+    </span>
+    <span class="card">
+      <img>
+      <h3>the less cool one</h3>
+      <p>description</p>
+      <br>
+      {% assign latest = site.comics | where: "series", "coolone" | sort: "chapter"
+      | last %}
+      <a href="{{ latest.url }}">
+        <button class="comicBtn">
+          Read Latest Chapter <small> — Chapter {{latest.chapter}}</small>
+        </button>
+      </a>
+    </span>
+  </div>
 </div>
